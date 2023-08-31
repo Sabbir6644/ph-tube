@@ -1,40 +1,51 @@
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
+
 <head>
      <meta charset="UTF-8">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
      <title>Youtube Assignment</title>
-          <!-- Daisy Link -->
+     <!-- Daisy Link -->
      <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.2/dist/full.css" rel="stylesheet" type="text/css" />
      <script src="https://cdn.tailwindcss.com"></script>
 </head>
+
 <body>
-<nav>
-     <div class="navbar my-8 bg-base-100">
-          <div class="navbar-start">
-            <img src="image/Logo.png" alt="">
+     <nav>
+          <div class="navbar my-4 bg-base-100">
+               <div class="navbar-start">
+                    <img src="image/Logo.png" alt="">
+               </div>
+
+               <div class="navbar-center">
+                    <a class="btn">Sort by view</a>
+               </div>
+               <div class="navbar-end">
+                    <a class="btn bg-[#FF1F3D] text-white">Blog</a>
+               </div>
           </div>
-          
-          <div class="navbar-center">
-            <a class="btn">Sort by view</a>
-          </div>
-          <div class="navbar-end">
-            <a class="btn bg-[#FF1F3D] text-white">Blog</a>
-          </div>
-        </div>
-</nav>
+     </nav>
      <hr>
      <main>
-          <div>
-               <div class="tabs gap-4 justify-center my-4">
-                    <a class="btn">All</a>
-                    <a class="btn">Music</a>
-                    <a class="btn">Comedy</a>
-                    <a class="btn">Drawing</a>
+          <div id="tab-container">
                
-                  </div>
           </div>
+          <section>
+               <div id="cardContainer" class="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4">
+                    
+
+
+                                        </div>
+                                      
+          </section>
+
+          <section>
+              
+          </section>
+
+
      </main>
-    <script src="index.js"></script> 
+     <script src="index.js"></script>
 </body>
+
 </html>
