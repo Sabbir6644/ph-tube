@@ -10,68 +10,101 @@
      <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="text-justify">
+<body>
+     <nav class="max-w-3xl mx-auto">
+          <div class="navbar my-4 bg-base-100">
+               <div class="navbar-start">
+                    <img src="image/Logo.png" alt="">
+               </div>
 
-     <div class="max-w-3xl mx-auto mb-4">
-          <h2 class="text-2xl font-semibold">Discuss the scope of var, let, and const</h2>
-          <h2 class="text-2xl font-semibold">var:</h2>
-          <p>
-               Variables declared with var are function-scoped or globally scoped, depending on where they are declared.
-               If declared within a function, the variable is accessible only within that function.
-               If declared outside any function, the variable becomes a global variable and is accessible throughout the
-               entire script.
-               var declarations are hoisted to the top of their containing function or script, which can lead to
-               unexpected behavior if not carefully managed.
-          </p>
-          <h2 class="text-2xl font-semibold">let:</h2>
+     
+               <div class="navbar-end">
+                    <a onclick="homePage()" class="btn bg-[#FF1F3D] text-white">Home</a>
+               </div>
+          </div>
+          <hr>
+     </nav>
 
-          <p>
-               Variables declared with let are block-scoped. A block can be a loop, an if statement, a function, or
-               simply any curly braces {}.
-               A variable declared with let is only accessible within the block it's defined in.
-               let declarations are also hoisted, but they are not initialized to undefined like var declarations.
-          </p>
-
-          <h2 class="text-2xl font-semibold">const:</h2>
-          <p>
-               Variables declared with const are also block-scoped, just like let.
-               The key difference is that once a value is assigned to a const variable, it cannot be reassigned. It is
-               constant.
-               However, the value itself is not immutable. If the value is an object, the properties of the object can
-               still be changed.
-
-          </p>
+     <div class="text-justify">
+          <div class="max-w-3xl mx-auto mb-4">
+               <h2 class="text-2xl font-semibold">Scope of var, let, and const:</h2>
+               <br>
+               <h2 class="text-2xl font-semibold underline">var:</h2>
+               <br>
+               <p>
+                    Variables declared with var are function-scoped or globally scoped, depending on where they are declared.
+                    If declared within a function, the variable is accessible only within that function.
+                    If declared outside any function, the variable becomes a global variable and is accessible throughout the
+                    entire script.
+                    var declarations are hoisted to the top of their containing function or script, which can lead to
+                    unexpected behavior.
+               </p>
+               <br>
+               <h2 class="text-2xl font-semibold underline">let:</h2>
+     <br>
+               <p>
+                    Variables declared with 'let' are block-scoped, which means they are only accessible within the block (a
+                    pair of curly braces) where they are defined. 'let' variables are not hoisted to the top of their scope
+                    and must be declared before they are used.
+               </p>
+     <br>
+               <h2 class="text-2xl font-semibold underline">const:</h2>
+               <br>
+               <p>
+                    Variables declared with const are also block-scoped, just like let.
+                    The key difference is that once a value is assigned to a const variable, it cannot be reassigned. It is
+                    constant.
+                    However, the value itself is not immutable. If the value is an object, the properties of the object can
+                    still be changed.
+     
+               </p>
+          </div>
+          <div class="max-w-3xl mx-auto mb-4">
+               <h2 class="text-2xl font-semibold"> Use cases of null and undefined</h2>
+              <br>
+               <p>In JavaScript, both `null` and `undefined` are used to represent the absence of a value. However, they are
+                    used in slightly different contexts:</p>
+                    <br>
+               <h2 class="text-2xl font-semibold underline">Undefined:</h2>
+               <p> It indicates that a variable has been declared but has not been assigned a value yet. It is also the
+                    default value of function parameters that are not provided when the function is called.</p>
+     
+               <br>
+                    <p class="font-semibold"> There are some scenarios where we get undefined:</p>
+               <ul class="list-disc">
+                    <li>A variable that has been declared but has not been assigned a value is undefined.</li>
+                    <li>Function parameters that are not provided are undefined.</li>
+                    <li>When you access an object property that doesn't exist, the result is undefined.</li>
+                    <li>The return value of a function that doesn't explicitly return anything is undefined.</li>
+                    <li>Array Elements That Don't Exist</li>
+                    <li>Implicit Return in Arrow Functions: If you have an arrow function with an implicit return (no braces
+                         {}), and it doesn't have a value to return, it will return undefined.</li>
+                    <li>Asynchronous Code Without Proper Handling: When working with asynchronous code, if you don't handle
+                         promises or callbacks correctly, variables may not be defined when you expect them to be.</li>
+                    <li>If set a value directlz to undefined.</li>
+               </ul>
+               <br>
+               <h2 class="text-2xl font-semibold underline">null:</h2>
+     <br>
+               <p>
+                    It is a value that represents the intentional absence of any object value. It is often used by developers
+                    to indicate that a variable or object property has no value or is empty.
+               </p>
+     <br>
+               <h2 class="text-2xl font-semibold">REST API:</h2>
+               
+               <br>
+               <p>
+                    REST API stands for Representational State Transfer Application Programming Interface. It is a set of
+                    architectural principles and constraints for designing networked applications. REST is not a technology
+                    itself; it's a style of architecture that uses HTTP requests to perform CRUD (Create, Read, Update,
+                    Delete) operations on resources.
+     
+               </p>
+          </div>
      </div>
-     <div class="max-w-3xl mx-auto mb-4">
-          <h2 class="text-2xl font-semibold">Tell us the use cases of null and undefined</h2>
-          <p>null and undefined are two distinct values in JavaScript that represent the absence of a value. They are
-               often used in different scenarios.</p>
-          <h2 class="text-2xl font-semibold">Undefined:</h2>
-          <ul  class="list-disc">
-               <li>A variable that has been declared but has not been assigned a value is undefined.</li>
-               <li>Function parameters that are not provided are undefined.</li>
-               <li>When you access an object property that doesn't exist, the result is undefined.</li>
-               <li>The return value of a function that doesn't explicitly return anything is undefined.</li>
-          </ul>
-          <h2 class="text-2xl font-semibold">let:</h2>
 
-          <p>
-               Variables declared with let are block-scoped. A block can be a loop, an if statement, a function, or
-               simply any curly braces {}.
-               A variable declared with let is only accessible within the block it's defined in.
-               let declarations are also hoisted, but they are not initialized to undefined like var declarations.
-          </p>
-
-          <h2 class="text-2xl font-semibold">const:</h2>
-          <p>
-               Variables declared with const are also block-scoped, just like let.
-               The key difference is that once a value is assigned to a const variable, it cannot be reassigned. It is
-               constant.
-               However, the value itself is not immutable. If the value is an object, the properties of the object can
-               still be changed.
-
-          </p>
-     </div>
+     <script src="index.js"></script>
 </body>
 
 </html>

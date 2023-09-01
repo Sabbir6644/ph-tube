@@ -148,6 +148,12 @@ const loadAPI = async (isShort) => {
    const shorting = () => {
      loadAPI(true);
    };
-   const blogPage = () => {};
+   const blogPage = () => {
+     window.location.href = "blog.html";
+   };
    loadAPI();
+
+   const homePage=()=>{
+     window.location.href = "index.html";
+   }
    
