@@ -43,6 +43,7 @@ const displayApiCard = (data) => {
      }else{
           cardContainer.classList.add('grid')
           arrayOfData.forEach(item => {
+               console.log(item.others.views);
                const div = document.createElement('div');
                div.classList = `card w-94 bg-base-100 shadow-xl`;
                div.innerHTML = `
@@ -62,7 +63,7 @@ const displayApiCard = (data) => {
                                                              
                                                         </div>
                                                              </div>
-                                                             <p>91K views</p>
+                                                             <p>${item.others.views} views</p>
                </div>
                </div>
                </div>
@@ -95,10 +96,14 @@ const displayApiCard = (data) => {
 
                cardContainer.appendChild(div);
 
-     
           });
           
      }
 
 }
+
+const blogPage = ()=>{
+     
+}
+
 loadAPI();
