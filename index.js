@@ -30,24 +30,28 @@ const showCatagory = async (id) => {
 const displayApiCard = (data) => {
      const arrayOfData = data.data;
      const cardContainer = document.getElementById('cardContainer');
-     cardContainer.textContent='';
-     
+     cardContainer.textContent = '';
+
      if (arrayOfData.length === 0) {
           cardContainer.classList.remove('grid')
-          cardContainer.innerHTML =`
+          cardContainer.innerHTML = `
           <div class=" flex justify-center mt-14"><img class="h-36 w-36" src="image/Icon.png" alt=""></div>
          <br>
           <h2 class="text-3xl font-bold text-center">Oops!! Sorry, There is no <br>
                 content here</h2>
           `
-     }else{
+     } else {
           cardContainer.classList.add('grid')
           arrayOfData.forEach(item => {
-               console.log(item.others.views);
+
+               // console.log(item.others.posted_date);
                const div = document.createElement('div');
                div.classList = `card w-94 bg-base-100 shadow-xl`;
                div.innerHTML = `
-               <figure><img  class="h-[200px] w-[312px] rounded-md" src="${item.thumbnail}" alt="thumbnil" /></figure>
+               <div class="relative">
+               <figure><img  class="h-[200px] w-full rounded-md" src="${item.thumbnail}" alt="thumbnil" /></figure>
+               <span id="date-container" class="absolute top-40 right-2 posted-time"></span>
+               </div>
                                     <div class="card-body">
                                          <div class="flex gap-4 ">
                                               <div>
@@ -71,11 +75,10 @@ const displayApiCard = (data) => {
      
                     `;
 
-                    const bageIconContainer = document.querySelectorAll('.bage-icon-container');
-                    // console.log(item?.authors[0]?.verified);
-                    bageIconContainer.forEach(bageIconContainer => {
-                         if (item?.authors[0]?.verified) {
-                             bageIconContainer.innerHTML = `
+               const bageIconContainer = document.querySelectorAll('.bage-icon-container');
+               bageIconContainer.forEach(bageIconContainer => {
+                    if (item?.authors[0]?.verified) {
+                         bageIconContainer.innerHTML = `
                              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                              viewBox="0 0 20 20" fill="none">
                              <g clip-path="url(#clip0_11_34)">
@@ -91,19 +94,32 @@ const displayApiCard = (data) => {
                              </defs>
                         </svg>
                              `;
-                         }
-                     });
+                    }
+               });
 
+               if (item.others.posted_date) {
+                    const timeInSeconds = item.others.posted_date;
+                    const hours = Math.floor(timeInSeconds / 3600);
+                    const minutes = Math.floor((timeInSeconds % 3600) / 60);
+                    const postedTimeElement = div.querySelector('.posted-time');
+
+                    if (postedTimeElement) {
+                         postedTimeElement.textContent = `${hours} hrs ${minutes} min ago`;
+                         postedTimeElement.style.background = 'black';
+                         postedTimeElement.style.padding = '4px';
+                         postedTimeElement.style.color = 'white';
+                    }
+               }
                cardContainer.appendChild(div);
 
           });
-          
+
      }
 
 }
 
-const blogPage = ()=>{
-     
+const blogPage = () => {
+
 }
 
 loadAPI();
